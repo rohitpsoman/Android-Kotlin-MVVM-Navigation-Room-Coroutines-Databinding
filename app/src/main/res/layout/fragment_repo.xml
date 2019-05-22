@@ -1,0 +1,118 @@
+<?xml version="1.0" encoding="utf-8"?>
+<layout
+        xmlns:android="http://schemas.android.com/apk/res/android"
+        xmlns:tools="http://schemas.android.com/tools"
+        xmlns:app="http://schemas.android.com/apk/res-auto">
+
+    <data>
+
+        <variable name="viewModel" type="com.example.mvvm.ui.repo.RepoViewModel"/>
+
+    </data>
+
+    <androidx.constraintlayout.widget.ConstraintLayout
+            android:layout_width="match_parent"
+            android:layout_height="match_parent"
+            tools:context=".ui.repo.RepoFragment"
+            android:paddingStart="20dp"
+            android:paddingEnd="20dp"
+            android:focusableInTouchMode="true"
+            android:focusable="true"
+            android:descendantFocusability="beforeDescendants"
+            android:clickable="true">
+
+        <ImageView
+                android:id="@+id/githubImageView"
+                android:layout_width="140dp"
+                android:layout_height="140dp"
+                app:layout_constraintStart_toStartOf="parent"
+                app:layout_constraintEnd_toEndOf="parent"
+                android:src="@drawable/ic_github"
+                app:layout_constraintTop_toTopOf="parent"
+                android:layout_marginTop="60dp"/>
+
+        <TextView
+                android:id="@+id/titleTextView"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text="@string/github"
+                android:textColor="@color/black"
+                app:layout_constraintTop_toBottomOf="@+id/githubImageView"
+                android:layout_marginTop="10dp"
+                android:textStyle="bold"
+                android:textSize="50sp"
+                app:layout_constraintStart_toStartOf="parent"
+                app:layout_constraintEnd_toEndOf="parent"/>
+
+        <com.google.android.material.textfield.TextInputLayout
+                android:id="@+id/ownerNameInput"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_marginTop="40dp"
+                android:textColorHint="@color/greyHint"
+                android:background="@android:color/transparent"
+                app:layout_constraintTop_toBottomOf="@+id/titleTextView">
+
+            <com.google.android.material.textfield.TextInputEditText
+                    android:id="@+id/ownerNameEditText"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:hint="@string/owner_name"
+                    android:textSize="16sp"
+                    android:paddingStart="5dp"
+                    android:paddingEnd="0dp"
+                    android:letterSpacing="0.02"
+                    android:singleLine="true"
+                    android:textColorHint="@color/greyHint"
+                    android:text="@={viewModel.repoDetails.ownerName}"
+                    app:error="@{viewModel.ownerNameErrorLiveData}"
+                    android:textColor="@color/black"
+                    android:backgroundTint="@color/underLineColor"
+                    android:inputType="textPersonName"/>
+
+        </com.google.android.material.textfield.TextInputLayout>
+
+        <com.google.android.material.textfield.TextInputLayout
+                android:id="@+id/repoNameInput"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_marginTop="15dp"
+                android:textColorHint="@color/greyHint"
+                android:background="@android:color/transparent"
+                app:layout_constraintTop_toBottomOf="@+id/ownerNameInput">
+
+            <com.google.android.material.textfield.TextInputEditText
+                    android:id="@+id/repoNameEditText"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:hint="@string/repo_name"
+                    android:textSize="16sp"
+                    android:paddingStart="5dp"
+                    android:paddingEnd="0dp"
+                    android:letterSpacing="0.02"
+                    android:singleLine="true"
+                    android:text="@={viewModel.repoDetails.repoName}"
+                    app:error="@{viewModel.repoNameErrorLiveData}"
+                    android:textColor="@color/black"
+                    android:backgroundTint="@color/underLineColor"
+                    android:inputType="none"/>
+
+        </com.google.android.material.textfield.TextInputLayout>
+
+        <com.google.android.material.button.MaterialButton
+                android:id="@+id/loginBT"
+                android:layout_width="match_parent"
+                android:layout_height="60dp"
+                android:backgroundTint="@color/black"
+                android:text="@string/search"
+                android:layout_marginTop="50dp"
+                android:textSize="15sp"
+                android:textAllCaps="true"
+                android:textColor="@color/white"
+                android:letterSpacing="0.05"
+                android:onClick="@{() -> viewModel.getRepository()}"
+                app:layout_constraintTop_toBottomOf="@+id/repoNameInput"/>
+
+    </androidx.constraintlayout.widget.ConstraintLayout>
+
+</layout>

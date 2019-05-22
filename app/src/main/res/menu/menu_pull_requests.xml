@@ -1,0 +1,9 @@
+<?xml version="1.0" encoding="utf-8"?>
+<menu xmlns:android="http://schemas.android.com/apk/res/android">
+
+    <item
+            android:id="@+id/actionChangeRepository"
+            android:icon="@drawable/ic_more_vert_black"
+            android:title="@string/change_repository"/>
+
+</menu>

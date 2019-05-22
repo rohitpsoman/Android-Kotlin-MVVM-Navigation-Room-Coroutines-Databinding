@@ -1,0 +1,23 @@
+<resources>
+    <string name="app_name">MVVM-Kotlin-Coroutines-Sample-App</string>
+
+    <!-- TODO: Remove or change this placeholder text -->
+    <string name="hello_blank_fragment">Hello blank fragment</string>
+    <string name="splash">Kotlin\nNavigation\nMVVM\nRepository Pattern\nCoroutines\nRoom\nDataBinding</string>
+    <string name="github">Github</string>
+
+    <string name="repo_owner_error">Please enter the repository owner name</string>
+    <string name="repo_name_error">Please enter the repository name</string>
+    <string name="repo_found_error">Repository Not Found</string>
+    <string name="network_error">Network Error. Please try again</string>
+    <string name="server_error">Server Error. Please try again</string>
+    <string name="common_error">An error occurred. Please try again</string>
+    <string name="owner_name">Repository Owner Name</string>
+    <string name="repo_name">Repository Name</string>
+    <string name="search">SEARCH</string>
+    <string name="change_repository">Change Repository</string>
+
+    <string name="open">open</string>
+    <string name="closed">closed</string>
+    <string name="network_lost">Network connection lost</string>
+</resources>
